@@ -34,10 +34,6 @@ const Header = styled.div`
     left: 1%;
     color: white;
   }
-  a:nth-of-type(2) {
-    color: red;
-    top: 4%;
-  }
   div {
     height: 100%;
     width: 100%;
@@ -54,6 +50,18 @@ const Category = styled.div`
   font-size: 2em;
   padding-bottom: .5em;
   padding-top: .5em;
+`
+const UnorderedList = styled.ul`
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  color: black;
+  font-size: 2em;
+  list-style: none;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  font-weight: 400;
 `
 /* <-----------------------------------------> */
 
@@ -79,13 +87,11 @@ class Workouts extends React.Component {
     return (
       <Container>
         {/* Toggle button for modal. */}
+        {/* <button type="button" onClick={this.showEditModal}>Edit</button> */}
         <Header>
           <div>
             <h1>Hi {this.props.currentUser.username}</h1><br/>
             <Link to="/dashboard"><h3>Go back</h3></Link>
-            <Link onClick={()=>{this.props.doLogout()}}>
-              <h4>Logout</h4>
-            </Link>
             <button type="button" onClick={this.showAddWorkoutModal}>Add a workout＋</button>
           </div>
         </Header>
@@ -103,9 +109,14 @@ class Workouts extends React.Component {
           <h4>equipment | weight</h4>
           <h4>sets | reps</h4>
         </Category>
+        <UnorderedList>
+          {/* {this.state.Workouts.map((w, i) =>)} */}
+
+        <MappedExercise workout={this.props.exercise} />
+
+        </UnorderedList>
 
 
-          <MappedExercise workout={this.props.exercise} />
 
 
         {/* Ternary to show/hide Modal */}
