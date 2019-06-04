@@ -80,9 +80,8 @@ class Workouts extends React.Component {
       <Container>
         <Header>
           <div>
-            <h1>Hi {this.props.currentUser.username}</h1><br/>
             <Link to="/dashboard"><h3>Go back</h3></Link>
-            <Link onClick={()=>{this.props.doLogout()}}>
+            <Link onClick={ () => { this.props.doLogout() } }>
               <h4>Logout</h4>
             </Link>
             <button type="button" onClick={this.showAddWorkoutModal}>Add a workout＋</button>

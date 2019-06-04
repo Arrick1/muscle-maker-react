@@ -65,7 +65,7 @@ class Dashboard extends React.Component {
               <Link to="/workouts">
                 <h1 style={{marginLeft: '73px'}}>My Workouts ➞</h1>
               </Link>
-              <Link onClick={()=>{this.props.doLogout()}}>
+              <Link onClick={ () => { this.props.doLogout() } }>
                 <h4 style={{marginRight: '67px'}}className="smaller">← Logout</h4>
               </Link>
             </Main>

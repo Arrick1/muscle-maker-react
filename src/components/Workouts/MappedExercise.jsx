@@ -19,6 +19,7 @@ class MappedExercise extends Component {
         return this.props.workout.map((exercise, i) => {
             return(
                 <UnorderedList key={i}>
+                    {/* Edit Button COMPONENT */}
                     {/* <button type="button" onClick={this.showEditModal}>Edit</button> */}
                     <li>{exercise.muscle}</li>
                     <li>{exercise.workout_name}</li>

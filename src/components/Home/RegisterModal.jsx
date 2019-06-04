@@ -126,7 +126,7 @@ class RegisterModal extends Component {
             type="text"
             name="username"
             placeholder="username"
-            autocomplete="off"
+            autoComplete="off"
             />
           <input
             value={email}
@@ -134,7 +134,7 @@ class RegisterModal extends Component {
             type="text"
             name="email"
             placeholder="email"
-            autocomplete="off"
+            autoComplete="off"
           />
           <input
             value={password}
@@ -142,7 +142,7 @@ class RegisterModal extends Component {
             type="password"
             name="password"
             placeholder="password"
-            autocomplete="off"
+            autoComplete="off"
           />
           <input
             value={verify_password}
@@ -150,7 +150,7 @@ class RegisterModal extends Component {
             type="password"
             name="verify_password"
             placeholder="verify password"
-            autocomplete="off"
+            autoComplete="off"
           />
           <div>
             <button onClick={this.doRegisterUser} className="button">

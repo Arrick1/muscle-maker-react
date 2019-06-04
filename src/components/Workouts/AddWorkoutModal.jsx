@@ -8,7 +8,7 @@ const Modal = styled.div`
   top: 11%;
   font-family: 'Roboto',sans-serif;
   background-color: rgb(20, 20, 20, .99);
-  border-top: 5px solid green;
+  border-top: 5px solid orange;
   height: 85vh;
   width: 36.8em;
   h3 {
@@ -30,8 +30,8 @@ const Modal = styled.div`
       width: 8em;
       top: -10%;
       font-size: 2em;
-      background-color: green;
-      border: 4px solid green;
+      background-color: orange;
+      border: 4px solid orange;
       color: white;
       margin-top: .5em;
       margin-bottom: .5em;
@@ -41,8 +41,8 @@ const Modal = styled.div`
       padding-right: 1em;
       &:hover {
         background-color: rgb(0, 0, 0, 0);
-        border: 4px solid rgb(0, 0, 0, 0);
-        color: green;
+        border: 4px solid orange;
+        color: orange;
         cursor: pointer;
       }
     }
@@ -55,9 +55,11 @@ const Modal = styled.div`
       background-color: rgb(0,0,0, .0);
       position: relative;
       top: 4%;
+      color: orange;
       &:hover {
-        border: 4px solid green;
-        color: green;
+        background-color: orange;
+        border: 4px solid orange;
+        color: white;
       }
     }
   input {
@@ -97,7 +99,7 @@ class AddWorkoutModal extends React.Component {
   }
   handleSubmit = async(e) =>{
     e.preventDefault()
-    const createdWorkOut = await fetch('http://localhost:8000/api/v1/workouts',{
+    const createdWorkOut = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/workouts`,{
       method: 'POST',
       body: JSON.stringify(this.state),
       credentials: 'include',
@@ -117,37 +119,37 @@ class AddWorkoutModal extends React.Component {
       <Modal>
         <form onSubmit={this.handleSubmit}>
           <input
-            autocomplete="off"
+            autoComplete="off"
             placeholder="workout"
             name="muscle"
             onChange={this.handleInput}
           />
           <input
-            autocomplete="off"
+            autoComplete="off"
             placeholder="muscle"
             name='workout_name'
             onChange={this.handleInput}
           />
           <input
-            autocomplete="off"
+            autoComplete="off"
             placeholder="equipment"
             name='equipment'
             onChange={this.handleInput}
           />
           <input
-            autocomplete="off"
+            autoComplete="off"
             placeholder="weight"
             name='weight'
             onChange={this.handleInput}
           />
           <input
-            autocomplete="off"
+            autoComplete="off"
             placeholder="Sets"
             name='sets'
             onChange={this.handleInput}
           />
           <input
-            autocomplete="off"
+            autoComplete="off"
             placeholder="Reps"
             name='reps'
             onChange={this.handleInput}

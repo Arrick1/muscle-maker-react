@@ -112,14 +112,14 @@ class LoginModal extends Component {
           <input
             name="username"
             placeholder="username"
-            autocomplete="off"
+            autoComplete="off"
             value={username}
             onChange={this.changeHandler}
           />
           <input
             type="password"
             name="password"
-            autocomplete="off"
+            autoComplete="off"
             placeholder="password"
             value={password}
             onChange={this.changeHandler}

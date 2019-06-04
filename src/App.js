@@ -27,7 +27,7 @@ class App extends React.Component {
 
   handleRegister = async (info) =>{
     try {
-      const registerCall = await fetch('http://localhost:8000/users/', {
+      const registerCall = await fetch(`${process.env.REACT_APP_BACKEND_URL}/users/`, {
         method: 'POST',
         body: JSON.stringify(info),
         credentials: 'include',
@@ -43,7 +43,7 @@ class App extends React.Component {
   }
   handleLogin = async (info)=>{
     try {
-      const loginResponse = await fetch('http://localhost:8000/users/login', {
+      const loginResponse = await fetch(`${process.env.REACT_APP_BACKEND_URL}/users/login`, {
         method:      'POST',
         credentials: 'include',
         body:         JSON.stringify(info),
@@ -75,7 +75,7 @@ class App extends React.Component {
 
   getWorkouts = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/users/${this.state.currentUser.id}`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/users/${this.state.currentUser.id}`, {
         credentials: 'include'
       })
       const responseParsed = await response.json()
@@ -87,7 +87,7 @@ class App extends React.Component {
 
   deleteWorkout = async (id) => { 
     console.log('clicked')
-    await fetch(`http://localhost:8000/api/v1/workouts/${id}`, {
+    await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/workouts/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application"
@@ -99,7 +99,7 @@ class App extends React.Component {
   };
 
   doLogout = async () => {
-    await fetch('http://localhost:8000/users/logout')
+    await fetch(`${process.env.REACT_APP_BACKEND_URL}/users/logout`)
     localStorage.clear()
     this.setState({
       currentUser: null,
